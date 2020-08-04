@@ -1,263 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
-  
-  <title>搭建博客 | 发哥的技术博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="WordPress Jekyll Octopress Ghost  Hexo 这里使用强大的Hexo搭建博客，文档地址如下，当然没有我的简单暴力  https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;configuration   环境前提：homebrew、node.js、git、npm等都是不能少滴  创建一个博客文件夹，进入文件夹，安装node环境 1npm install hexo-c">
-<meta property="og:type" content="article">
-<meta property="og:title" content="搭建博客">
-<meta property="og:url" content="http://yoursite.com/2020/08/04/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
-<meta property="og:site_name" content="发哥的技术博客">
-<meta property="og:description" content="WordPress Jekyll Octopress Ghost  Hexo 这里使用强大的Hexo搭建博客，文档地址如下，当然没有我的简单暴力  https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;configuration   环境前提：homebrew、node.js、git、npm等都是不能少滴  创建一个博客文件夹，进入文件夹，安装node环境 1npm install hexo-c">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/690ac16a6cd94ffd840353a4d15ed149~tplv-k3u1fbpfcp-zoom-1.image">
-<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ad763eccd67c4ba08fcbf874da07ede3~tplv-k3u1fbpfcp-zoom-1.image">
-<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/01d91e76df314477b05ad4061f96cdb2~tplv-k3u1fbpfcp-zoom-1.image">
-<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d99c72ec7b9a418bb36dda9a2422d534~tplv-k3u1fbpfcp-zoom-1.image">
-<meta property="article:published_time" content="2020-08-04T08:13:20.000Z">
-<meta property="article:modified_time" content="2020-08-04T09:47:34.920Z">
-<meta property="article:author" content="jiayuanfa">
-<meta property="article:tag" content="Android、iOS">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/690ac16a6cd94ffd840353a4d15ed149~tplv-k3u1fbpfcp-zoom-1.image">
-  
-    <link rel="alternate" href="/atom.xml" title="发哥的技术博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 5.0.0"></head>
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">发哥的技术博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/04/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-08-04T08:13:20.000Z" itemprop="datePublished">2020-08-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      搭建博客
-    </h1>
-  
+{% block page_class %}page-post-detail{% endblock %}
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>WordPress</li>
-<li>Jekyll</li>
-<li>Octopress</li>
-<li>Ghost</li>
-</ul>
-<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h4><ul>
-<li><p>这里使用强大的Hexo搭建博客，文档地址如下，当然没有我的简单暴力</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">https://hexo.io/zh-cn/docs/configuration</a></p>
-</blockquote>
-</li>
-<li><p>环境前提：homebrew、node.js、git、npm等都是不能少滴<br><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/690ac16a6cd94ffd840353a4d15ed149~tplv-k3u1fbpfcp-zoom-1.image"></p>
-</li>
-<li><p>创建一个博客文件夹，进入文件夹，安装node环境</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成之后，init hexo，这里名字最好和将要创建的github仓库名字一样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init jiayuanfa.github.io</span><br></pre></td></tr></table></figure></li>
-<li><p>检查本地服务器</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ad763eccd67c4ba08fcbf874da07ede3~tplv-k3u1fbpfcp-zoom-1.image"></p>
-</li>
-<li><p>完毕！即可使用本地服务器查看博客</p>
-</li>
-</ul>
-<h4 id="目录介绍"><a href="#目录介绍" class="headerlink" title="目录介绍"></a>目录介绍</h4><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/01d91e76df314477b05ad4061f96cdb2~tplv-k3u1fbpfcp-zoom-1.image"></p>
-<ul>
-<li>source是博客资源文件夹</li>
-<li>source/_grafts 是草稿</li>
-<li>source/_posts 文章文件夹</li>
-<li>themes 存放主题</li>
-<li>_config.yml 全局配置文件夹</li>
-</ul>
-<h4 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h4><ul>
-<li><p>创建名字为xxx.github.io的仓库</p>
-</li>
-<li><p>修改博客配置文件<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d99c72ec7b9a418bb36dda9a2422d534~tplv-k3u1fbpfcp-zoom-1.image"></p>
-</li>
-<li><p>一行代码部署到 github</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清除缓存 网页正常情况下可以忽略此条命令</span><br><span class="line">hexo g #生成静态网页</span><br><span class="line">hexo d #开始部署</span><br><span class="line"></span><br><span class="line">也可以一次性执行</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果遇到如下报错</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deployer not found: git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用如下命令解决即可</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后继续一次性命令</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器输入 【你的名字】.github.io 访问吧～</p>
-</li>
-<li><p>之后如果要新写md格式的文章直接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章名字</span><br></pre></td></tr></table></figure></li>
-<li><p>标签分类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
+{% block content %}
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="ckdfsp0y900012n5w6oeah1z0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2020/08/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/04/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">搭建博客</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/04/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 jiayuanfa<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
