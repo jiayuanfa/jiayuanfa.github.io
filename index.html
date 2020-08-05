@@ -169,10 +169,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-04 16:13:20 / 修改时间：17:47:34" itemprop="dateCreated datePublished" datetime="2020-08-04T16:13:20+08:00">2020-08-04</time>
+              <time title="创建时间：2020-08-04 16:13:20" itemprop="dateCreated datePublished" datetime="2020-08-04T16:13:20+08:00">2020-08-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-05 11:09:10" itemprop="dateModified" datetime="2020-08-05T11:09:10+08:00">2020-08-05</time>
+              </span>
 
           
 
@@ -242,9 +248,53 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章名字</span><br></pre></td></tr></table></figure></li>
 <li><p>标签分类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-
+</li>
+<li><p>关于Typora Mrakdown编辑器的换行自动跟上面格式的问题，使用 command + [ 即可稀释掉</p>
 </li>
 </ul>
+<h4 id="绑定自己的域名"><a href="#绑定自己的域名" class="headerlink" title="绑定自己的域名"></a>绑定自己的域名</h4><ul>
+<li>首先去阿里云购买域名，这个我就不说了</li>
+<li>买完域名之后，现认证，大概一天时间就好了，然后去阿里云的控制台里面填写域名以及地址解析</li>
+</ul>
+<p>![image-20200805110255732](/Users/jiayuanfa/Library/Application Support/typora-user-images/image-20200805110255732.png)</p>
+<ul>
+<li>添加两种记录即可，一种是CNAME类型的，用来关联其他域名，一种是IP映射的</li>
+</ul>
+<p>![image-20200805110403171](/Users/jiayuanfa/Library/Application Support/typora-user-images/image-20200805110403171.png)</p>
+<ul>
+<li>接下来在博客文件夹的source下面创建CNAME文件，并填写上自己购买的域名</li>
+</ul>
+<img src="/Users/jiayuanfa/Library/Application Support/typora-user-images/image-20200805105826868.png" alt="image-20200805105826868" style="zoom:50%;" />
+
+
+
+<ul>
+<li>然后，去github的博客仓库的设置里面也填写自己的域名</li>
+</ul>
+<p>![image-20200805110105560](/Users/jiayuanfa/Library/Application Support/typora-user-images/image-20200805110105560.png)</p>
+<ul>
+<li>最后</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>就可以使用购买的域名进行博客访问了</li>
+</ul>
+<h3 id="修改博客主题"><a href="#修改博客主题" class="headerlink" title="修改博客主题"></a>修改博客主题</h3><ul>
+<li>这里推荐网红主题 NEXT </li>
+<li>直接进入博客文件夹，clone即可</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后，修改主题</li>
+</ul>
+<p>![image-20200805110757653](/Users/jiayuanfa/Library/Application Support/typora-user-images/image-20200805110757653.png)</p>
+<ul>
+<li>应用即可</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
