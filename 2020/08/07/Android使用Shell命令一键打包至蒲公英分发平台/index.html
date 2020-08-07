@@ -181,6 +181,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/07/Android%E4%BD%BF%E7%94%A8Shell%E5%91%BD%E4%BB%A4%E4%B8%80%E9%94%AE%E6%89%93%E5%8C%85%E8%87%B3%E8%92%B2%E5%85%AC%E8%8B%B1%E5%88%86%E5%8F%91%E5%B9%B3%E5%8F%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/07/Android%E4%BD%BF%E7%94%A8Shell%E5%91%BD%E4%BB%A4%E4%B8%80%E9%94%AE%E6%89%93%E5%8C%85%E8%87%B3%E8%92%B2%E5%85%AC%E8%8B%B1%E5%88%86%E5%8F%91%E5%B9%B3%E5%8F%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -241,6 +255,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -397,6 +412,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'dOCJkxdNyvyV4t99cUY2haz5-gzGzoHsz',
+      appKey     : 'qxntj8KL30dGQUb4TfAXbbbC',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
